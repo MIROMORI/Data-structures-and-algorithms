@@ -1,0 +1,2 @@
+Implementado: 
+  Binary search
