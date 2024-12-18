@@ -21,6 +21,14 @@ public class LinkedList {
         }
     }
 
+    public void insertAtStart(int data){
+        Node insertNode = new Node();
+        insertNode.data = data;
+        insertNode.next = head;
+
+        head = insertNode;
+    }
+
     //mostra todos os elementos da lista
     public void show(){
         Node node = head;
@@ -29,5 +37,19 @@ public class LinkedList {
             System.out.println(node.data);
             node = node.next;
         }
+    }
+
+    public void insertAt(int data, int index){ //insere o elemento no meio da lista
+        Node insertNode = new Node();
+        insertNode.data = data;
+
+
+        Node temp = head; //começa a iteração pelo primeiro elemento (head)
+        for(int i = 0; i < index; i++){
+            temp = temp.next;
+        }
+
+        insertNode.next = temp.next;
+        temp.next = insertNode;
     }
 }
